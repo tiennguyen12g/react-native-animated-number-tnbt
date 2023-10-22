@@ -32,7 +32,7 @@ You can clone this repo to test package.
    declare module "react-native-animated-number-tnbt"
    ```
 #### Demo
-   ![Watch the video](https://www.youtube.com/watch?v=gbKQOYHOjZY&ab_channel=CodeDaily)
+   https://github.com/tiennguyen12g/my-media-storage/assets/40747229/71d2b183-eb12-412a-a289-b41cd4332b7e
 ## Available props
    ```bash
       interface Props {
@@ -82,17 +82,15 @@ By default, "withSpring" is used.
 
 | Name                        | Type     | Default | Description                                                                                              |
 |-----------------------------|----------|---------|----------------------------------------------------------------------------------------------------------|
-| mass                        | number   | 1       | The weight of the spring. Reducing this value makes the animation faster.                               |
-| damping                     | number   | 10      | How quickly a spring slows down. Higher damping means the spring will come to rest faster.             |
-| stiffness                   | number   | 100     | How bouncy the spring is.                                                                               |
+| mass                        | number   | 3       | The weight of the spring. Reducing this value makes the animation faster.                               |
+| damping                     | number   | 20      | How quickly a spring slows down. Higher damping means the spring will come to rest faster.             |
+| stiffness                   | number   | 250     | How bouncy the spring is.                                                                               |
 | overshootClamping           | boolean  | false   | Whether a spring can bounce over the `toValue`.                                                         |
 | restDisplacementThreshold   | number   | 0.01    | The displacement below which the spring will snap to `toValue` without further oscillations.          |
 | restSpeedThreshold          | number   | 2       | The speed in pixels per second from which the spring will snap to `toValue` without further oscillations. |
 
 Reference: [Reanimated withSpring Documentation](https://docs.swmansion.com/react-native-reanimated/docs/animations/withSpring/)
 
-
-Reference: https://docs.swmansion.com/react-native-reanimated/docs/animations/withSpring/
    ## Example
    ```bash
 import React from 'react';

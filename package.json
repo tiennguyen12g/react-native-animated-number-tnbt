@@ -1,6 +1,6 @@
 {
   "name": "react-native-animated-number-tnbt",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "private": false,
   "peerDependencies": {
     "react-native-reanimated": "^3.5.4"

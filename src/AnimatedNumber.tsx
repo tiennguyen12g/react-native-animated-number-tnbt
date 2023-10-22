@@ -41,7 +41,6 @@ function AnimatedNumber({
       'You can only set values for either withTimingProps or withSpringProps, not both.',
     );
   }
-  console.log('decimalAmount',decimalAmount);
 
   let numberString = numberForAnimated.toString(); // Convert the number to a string
   let numberArray = numberString.split(''); // Split the string into an array
@@ -61,9 +60,10 @@ function AnimatedNumber({
     }
     // console.log(numberArray)
   }
+  let heightContainer = (fontSizeValue! ) || 70
 
   return (
-    <View style={[styles.container]}>
+    <View style={[styles.container,{height:heightContainer}]}>
       {numberArray.map((numberSymbol, i) => {
         const validNumber = isNaN(+numberSymbol);
         return (
@@ -94,7 +94,18 @@ function AnimatedNumber({
                 />
               </View>
             ) : (
-              <Text style={[styles.dot, {marginHorizontal: gap, color: colorValue || "red", fontSize: fontSizeValue || 50}]}>
+              <Text 
+                style={[
+                  styles.dot, 
+                  {
+                    marginHorizontal: gap, 
+                    color: colorValue || "red", 
+                    fontSize: fontSizeValue || 50,
+                    // includeFontPadding: false,
+                    lineHeight: fontSizeValue! * 1.1,
+                  }
+                ]}
+              >
                 {numberSymbol}
               </Text>
             )}
@@ -111,14 +122,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     overflow: 'hidden',
     justifyContent: 'center',
-    borderWidth: 1,
-    height: 70,
   },
   animatedStyle: {},
   dot: {
     right: 0,
     margin: 0,
     padding: 0,
-    height: 60,
   },
 });

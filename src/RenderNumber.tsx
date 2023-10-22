@@ -44,8 +44,9 @@ export default function RenderNumber({
   fontSizeValue,
 }: RenderNumberProps) {
 
+  let heightChange = fontSizeValue || 50
   const initialY = useSharedValue(0);
-  const negativeTranslateY = -(initialY.value + numberSymbol * 60);
+  const negativeTranslateY = -(initialY.value + numberSymbol * heightChange);
   const easingValue = listProperties.easingValue !== undefined ? listProperties.easingValue : "linear";
   const animatedStylesTiming = useAnimatedStyle(() => {
     return {
@@ -85,11 +86,10 @@ export default function RenderNumber({
               style={{
                 color: colorValue,
                 fontSize: fontSizeValue,
-                right: 0,
-                margin: 0,
-                padding: 0,
-                height: 60,
+                height: fontSizeValue,
                 marginHorizontal: gap,
+                // includeFontPadding: false,
+                lineHeight: fontSizeValue! * 1.1,
               }}>
               {numberCharacter}
             </Text>
@@ -101,5 +101,6 @@ export default function RenderNumber({
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+  },
 });
